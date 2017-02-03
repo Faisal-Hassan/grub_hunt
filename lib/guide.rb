@@ -1,18 +1,28 @@
+require 'restaurant'
 class Guide
   
   def initialize(path=nil)
     # locate the restaurant test file at path
+    Restaurant.filepath = path
+    if Restaurant.file_exists?
+      puts "Found restaurant file"
     # or create a new file
+    elsif Restaurant.create_file
+      puts "Created Restaurant file"
     # exit if create fails
+    else
+      puts "Exiting. \n\n"
+      exit!
+    end
   end
   
   def launch!
-    # introduction
+    introduction
     # action loop
     #  what do you want to do? (list, find, add ,quit)
     #  do that action
     # repeat until user quits
-    # conclusion
+    conclusion
   end
   
   def introduction
