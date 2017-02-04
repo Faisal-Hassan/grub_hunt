@@ -6,6 +6,8 @@ class Restaurant
     @@filepath = File.join(APP_ROOT, path)
   end
   
+  attr_accessor :name, :cuisine, :price
+  
   def self.file_exists?
     # class should know if the restaurant file exists
     if @@filepath && File.exists?(@@filepath)
