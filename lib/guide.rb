@@ -51,7 +51,7 @@ class Guide
     when 'find'
       puts "finding..."
     when 'add'
-      puts "adding..."
+      puts add
     when 'quit'
       return :quit
     else
@@ -60,7 +60,7 @@ class Guide
   end
   
   def add
-    puts "\nAdd a restaurant.\n\n".capitalize
+    puts "\nAdd a restaurant.\n\n".upcase
     restaurant = Restaurant.new
     
     print "Restaurant name: "
@@ -69,8 +69,14 @@ class Guide
     print "Cuisine type: "
     restaurant.cuisine = gets.chomp.strip
     
-    print "Average price: "
+    print "Average price($): "
     restaurant.price = gets.chomp.strip
+    
+    if restaurant.save
+      puts "\nRestaurant added.\n\n"
+    else
+      puts "\nSave Error: Restaurant not added.\n\n"
+    end
   end
   
   def introduction
