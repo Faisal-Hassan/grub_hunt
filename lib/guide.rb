@@ -47,15 +47,23 @@ class Guide
   def do_action(action)
     case action
     when 'list'
-      puts "listing..."
+      list
     when 'find'
       puts "finding..."
     when 'add'
-      puts add
+      add
     when 'quit'
       return :quit
     else
       puts "\nI don't understand that command.\n"
+    end
+  end
+  
+  def list
+    puts "\nList All Restaurants.\n\n".upcase
+    restaurants = Restaurant.saved_restaurants
+    restaurants.each do |rest|
+      puts rest.name + " | " + rest.cuisine +  " | $" + rest.price
     end
   end
   

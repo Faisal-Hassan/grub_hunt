@@ -1,4 +1,4 @@
-Water and Wall	Continental	$50
+Water and Wall	Continental	50
 POV Lounge	American	40
 Boomers	Thai	40
 Kebab Palace	Pakistani	20
